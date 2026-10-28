@@ -1,0 +1,384 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HeartCare | Heart Disease Risk Prediction</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- NAVIGATION BAR -->
+  <header class="navbar">
+    <a href="#home" class="logo"><span>♥</span> HeartCare</a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#predictor">Predictor</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a href="#predictor" class="nav-button">Get Started ↗</a>
+  </header>
+
+  <main>
+
+    <!-- 1. HOME PAGE -->
+    <section class="hero section" id="home">
+      <div class="hero-content">
+        <span class="eyebrow">♥ HEART HEALTH • MADE SIMPLE</span>
+
+        <h1>
+          Know Your<br>
+          <span>Heart Disease</span> Risk
+        </h1>
+
+        <p>
+          Our machine learning model helps you estimate your
+          heart disease risk based on key health indicators.
+          Enter your details and get an informative prediction.
+        </p>
+
+        <a href="#predictor" class="primary-button">
+          Check Your Risk <span>→</span>
+        </a>
+
+        <div class="trust-note">
+          <span>✓</span> Simple, private and easy to use
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="circle-bg"></div>
+        <div class="floating-icon icon-one">♥</div>
+        <div class="floating-icon icon-two">+</div>
+        <div class="floating-icon icon-three">♡</div>
+
+        <div class="heart-art">
+          <span class="big-heart">♥</span>
+          <div class="heartbeat">⌁ ━╱╲━━</div>
+          <div class="stethoscope">◉</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features section">
+      <article class="feature-card">
+        <div class="feature-icon cyan">✚</div>
+        <h3>Easy to Use</h3>
+        <p>Simple and quick input form with clear guidance.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon blue">⌘</div>
+        <h3>Machine Learning</h3>
+        <p>Powered by a Logistic Regression model.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon mint">♙</div>
+        <h3>Instant Results</h3>
+        <p>Get your model assessment in seconds.</p>
+      </article>
+
+      <article class="feature-card">
+        <div class="feature-icon purple">♥</div>
+        <h3>Better Awareness</h3>
+        <p>Stay informed about your heart health.</p>
+      </article>
+    </section>
+
+    <!-- WHY HEART HEALTH MATTERS -->
+    <section class="why-section section">
+      <div>
+        <span class="eyebrow">A HEALTHIER TOMORROW</span>
+        <h2>Why Heart Health Matters?</h2>
+        <p>
+          Understanding heart health can help you make informed
+          decisions. Healthy habits and regular medical checkups
+          are important parts of looking after your heart.
+        </p>
+      </div>
+
+      <div class="pulse-decoration">
+        <span>♥</span>
+        <div>────╱╲────╱╲────</div>
+      </div>
+    </section>
+
+    <!-- 2. PATIENT INPUT FORM -->
+    <section class="predictor-section section" id="predictor">
+      <div class="section-heading">
+        <div class="heading-icon">▤</div>
+        <div>
+          <span class="eyebrow">YOUR HEALTH PROFILE</span>
+          <h2>Patient Information</h2>
+          <p>Enter the details required for your heart disease risk prediction.</p>
+        </div>
+      </div>
+
+      <form class="patient-form" id="patientForm">
+        <div class="form-grid">
+
+          <label>
+            Age
+            <input type="number" name="age" placeholder="Enter age (years)" min="1" max="120" required>
+          </label>
+
+          <label>
+            Sex
+            <select name="sex" required>
+              <option value="">Select sex</option>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </label>
+
+          <label>
+            Chest Pain Type
+            <select name="chestPain" required>
+              <option value="">Select chest pain type</option>
+              <option value="typical">Typical angina</option>
+              <option value="atypical">Atypical angina</option>
+              <option value="nonAnginal">Non-anginal pain</option>
+              <option value="asymptomatic">Asymptomatic</option>
+            </select>
+          </label>
+
+          <label>
+            Cholesterol
+            <input type="number" name="cholesterol" placeholder="Enter value (mg/dL)" min="0" required>
+          </label>
+
+          <label>
+            Resting Blood Pressure
+            <input type="number" name="bloodPressure" placeholder="Enter value (mm Hg)" min="0" required>
+          </label>
+
+          <label>
+            Maximum Heart Rate
+            <input type="number" name="maxHeartRate" placeholder="Enter value (bpm)" min="0" required>
+          </label>
+
+          <label>
+            Fasting Blood Sugar
+            <select name="bloodSugar" required>
+              <option value="">Select result</option>
+              <option value="normal">≤ 120 mg/dL</option>
+              <option value="high">Above 120 mg/dL</option>
+            </select>
+          </label>
+
+          <label>
+            Oldpeak
+            <input type="number" name="oldpeak" step="0.1" placeholder="Enter value" required>
+          </label>
+
+          <label>
+            Resting ECG
+            <select name="restingECG" required>
+              <option value="">Select ECG result</option>
+              <option value="normal">Normal</option>
+              <option value="st">ST-T wave abnormality</option>
+              <option value="hypertrophy">Left ventricular hypertrophy</option>
+            </select>
+          </label>
+
+          <label>
+            ST Slope
+            <select name="stSlope" required>
+              <option value="">Select ST slope</option>
+              <option value="up">Upsloping</option>
+              <option value="flat">Flat</option>
+              <option value="down">Downsloping</option>
+            </select>
+          </label>
+
+          <label>
+            Exercise-Induced Angina
+            <select name="angina" required>
+              <option value="">Select yes or no</option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </label>
+
+        </div>
+
+        <button type="submit" class="primary-button submit-button">
+          Predict Risk →
+        </button>
+</form>
+    </section>
+
+    <!-- 3 & 4. RESULT PAGE DESIGN PREVIEWS -->
+    <section class="results-section section" id="results">
+      <div class="section-heading centered">
+        <div>
+          <span class="eyebrow">RESULT SCREEN DESIGN</span>
+          <h2>Prediction Results</h2>
+          <p>Illustrative examples only—not actual predictions.</p>
+        </div>
+      </div>
+
+      <div class="result-grid">
+
+        <!-- HIGHER RISK DESIGN -->
+        <article class="result-card high-result">
+          <div class="status-icon">!</div>
+          <h3>Higher Risk Indicator</h3>
+          <p class="result-subtitle">Example result layout</p>
+
+          <div class="risk-gauge red-gauge">
+            <div>
+              <strong>78%</strong>
+              <span>Example score</span>
+            </div>
+          </div>
+
+          <div class="result-label">
+            <span>♥</span>
+            <div>
+              <small>Example predicted class</small>
+              <strong>Higher indicator</strong>
+            </div>
+          </div>
+
+          <h4>What This Means</h4>
+          <p class="result-copy">
+            The model's output will be explained here.
+            This result is not a medical diagnosis.
+          </p>
+
+          <div class="recommendations">
+            <strong>♡ Suggested Next Steps</strong>
+            <ul>
+              <li>Discuss concerns with a healthcare professional.</li>
+              <li>Keep up with routine checkups.</li>
+              <li>Follow professional advice about heart health.</li>
+            </ul>
+          </div>
+
+          <a href="#predictor" class="secondary-button">Try Again</a>
+        </article>
+
+        <!-- LOWER RISK DESIGN -->
+        <article class="result-card low-result">
+          <div class="status-icon">✓</div>
+          <h3>Lower Risk Indicator</h3>
+          <p class="result-subtitle">Example result layout</p>
+
+          <div class="risk-gauge green-gauge">
+            <div>
+              <strong>12%</strong>
+              <span>Example score</span>
+            </div>
+          </div>
+
+          <div class="result-label">
+            <span>♥</span>
+            <div>
+              <small>Example predicted class</small>
+              <strong>Lower indicator</strong>
+            </div>
+          </div>
+
+          <h4>What This Means</h4>
+          <p class="result-copy">
+            A lower model score does not rule out heart disease
+            or replace professional medical advice.
+          </p>
+
+          <div class="recommendations">
+            <strong>♡ Heart Health Reminders</strong>
+            <ul>
+              <li>Continue healthy daily habits.</li>
+              <li>Attend routine health checkups.</li>
+              <li>Discuss symptoms with a professional.</li>
+            </ul>
+          </div>
+
+          <a href="#predictor" class="secondary-button">Try Again</a>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- 5. ABOUT PAGE -->
+    <section class="about-section section" id="about">
+      <div class="about-content">
+        <span class="eyebrow">ABOUT THE PROJECT</span>
+        <h2>About Heart Disease Prediction</h2>
+
+        <h3>What is heart disease?</h3>
+        <p>
+          Heart disease is a broad term for conditions affecting
+          the heart. Risk factors vary, and a website prediction
+          cannot determine whether someone has a condition.
+        </p>
+
+        <h3>How This Website Works</h3>
+        <ol class="steps">
+          <li><span>1</span> Enter health information in the form.</li>
+          <li><span>2</span> Prepare the data to match model training.</li>
+          <li><span>3</span> Display the trained model's prediction.</li>
+        </ol>
+
+        <div class="disclaimer">
+          <strong>🛡 Important Disclaimer</strong>
+          <p>
+            This project is for educational purposes only. It is not
+            a substitute for professional medical advice, diagnosis,
+            or treatment. Consult a qualified healthcare professional
+            about health concerns.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-visual">
+        <div class="about-heart">♥</div>
+        <div class="about-plus">+</div>
+        <div class="about-circle"></div>
+      </div>
+
+      <div class="about-features">
+        <article><span>⌘</span><strong>Machine Learning</strong><small>Logistic Regression</small></article>
+        <article><span>♥</span><strong>Prediction Interface</strong><small>Model output display</small></article>
+        <article><span>♙</span><strong>User Friendly</strong><small>Simple input form</small></article>
+        <article><span>▣</span><strong>Privacy Aware</strong><small>No storage in this demo</small></article>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <a href="#home" class="logo"><span>♥</span> HeartCare</a>
+
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#predictor">Predictor</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <p>Healthier Hearts <span>|</span> Brighter Futures</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
